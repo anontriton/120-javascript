@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+
+<script>
+    function convertTemp() {
+        var fahrenheit = prompt("Enter temperature in Fahrenheit:");
+        var celsius = (fahrenheit - 32) * 5 / 9;
+        alert("Temperature in Celsius: " + celsius.toFixed(2));
+
+        var celsiusInput = prompt("Enter temperature in Celsius:");
+        var fahConverted = (celsiusInput * 9 / 5) + 32;
+        alert("Temperature in Fahrenheit: " + fahConverted.toFixed(2));
+    }
+</script>
+
+<body onload="convertTemp()">
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<script>
+    function getOddAndSum() {
+        var num1 = parseInt(prompt("Enter range start:"));
+        var num2 = parseInt(prompt("Enter range end:"));
+
+        var sum = 0;
+        var result = "Odd numbers: ";
+
+        for (var i = num1; i <= num2; i++) {
+            if (i % 2 !== 0) {
+                result += i + " ";
+            }
+            sum += i;
+        }
+
+        document.getElementById("oddNum").innerText = result;
+        document.getElementById("sum").innerText = "Sum: " + sum;
+    }
+</script>
+
+<body onload="getOddAndSum()">
+</body>
+    <p id="oddNum"></p>
+    <p id="sum"></p>
+</html>

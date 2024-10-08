@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<script>
+    function askUser() {
+        var firstName = prompt("Enter your first name:");
+        var lastName = prompt("Enter your last name:");
+        alert("Your name is " + firstName + " " + lastName);
+        
+        var childCount = prompt("How many children do you have?");
+        var message = "";
+
+        if (childCount == 0) {
+            message = "You have no children";
+        } else if (childCount == 1) {
+            message = "You have 1 child";
+        } else if (childCount > 1) {
+            message = "You have " + childCount + " children";
+        } else {
+            message = "I didn't quite get that";
+        }
+        
+        document.getElementById("children").innerText = message;
+    }
+</script>
+
+<body onload="askUser()">
+    <p id="children"></p>
+</body>
+
+</html>
