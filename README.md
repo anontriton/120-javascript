@@ -12,4 +12,4 @@
 2.3) pop up an alert that displays entered name and chosen response
 2.4) clicked button text instead of speak() event handler for #3
 2.5) list of states
-2.6) add "clear states" to #5
+2.6) made #5 better
