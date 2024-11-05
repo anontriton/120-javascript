@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <select id="stateSelect" size="10"></select>
+    <button onclick="addState()">Add State</button>
+
+    <div id="stateDiv"></div>
+    <button onclick="clearStates()">Clear States</button>
+
+    <script>
+        const states = ["California", "Texas", "Florida", "New York", "Illinois", "Washington", "Ohio", "Georgia", "Minnesota", "Massachusetts"];
+        const stateSelect = document.getElementById('stateSelect');
+
+        states.forEach(state => {
+            const option = document.createElement('option');
+            option.text = state;
+            stateSelect.add(option);
+        });
+
+        function addState() {
+            const selectedState = stateSelect.options[stateSelect.selectedIndex].text;
+            const stateDiv = document.getElementById('stateDiv');
+            stateDiv.innerHTML += selectedState + '<br>';
+        }
+
+        function clearStates() {
+            document.getElementById('stateDiv').innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>

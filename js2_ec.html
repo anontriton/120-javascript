@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <select id="stateSelect" size="10"></select>
+    <button onclick="addState()">Add State</button>
+
+    <div id="stateDiv"></div>
+    <button onclick="clearStates()">Clear States</button>
+
+    <script>
+        const states = ["California", "Texas", "Florida", "New York", "Illinois", "Pennsylvania", "Ohio", "Georgia", "Michigan", "North Carolina"];
+        const stateSelect = document.getElementById('stateSelect');
+        const addedStates = [];
+
+        function updateStates() {
+            stateSelect.innerHTML = '';
+            states.forEach((state, index) => {
+                if (!addedStates.includes(state)) {
+                    const option = document.createElement('option');
+                    option.text = state;
+                    option.value = index;
+                    stateSelect.add(option);
+                }
+            });
+        }
+
+        function addState() {
+            const selectedState = stateSelect.options[stateSelect.selectedIndex].text;
+            addedStates.push(selectedState);
+            const stateDiv = document.getElementById('stateDiv');
+            stateDiv.innerHTML += `<p>${addedStates.length}. ${selectedState}</p>`;
+            updateStates();
+        }
+
+        function clearStates() {
+            addedStates.length = 0;
+            document.getElementById('stateDiv').innerHTML = '';
+            updateStates();
+        }
+
+        updateStates();
+    </script>
+</body>
+
+</html>
